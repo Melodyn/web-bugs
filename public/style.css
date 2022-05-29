@@ -1,0 +1,12 @@
+img {
+    max-height: 232px;
+    object-fit: cover;
+}
+
+.card {
+    cursor: pointer;
+    transition: .3s linear;
+}
+.card:hover {
+    box-shadow: 0 0 16px rgba(0 0 0 / 50%);
+}

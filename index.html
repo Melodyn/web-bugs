@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="public/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="public/style.css">
+  <link data-react-helmet="true" rel="icon" href="https://static.rutube.ru/static/favicon.ico" type="image/x-icon">
+  <title>Tube</title>
+</head>
+<body>
+<nav class="navbar navbar-expand">
+  <div class="container-fluid">
+    <h1 class="navbar-brand bg-danger rounded-5 text-white px-3 my-0">Tube</h1>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Лента</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Популярное</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Категории
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="#">Программирование</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Образование</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">18 +</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+      </form>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+    </div>
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row row-cols-3 gy-4">
+    <div class="col">
+      <div class="card">
+        <img src="public/images/diy.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Удивительная самоделка! Сделай и себе!</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="public/images/hypnotoad.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Программирование на успех с помощью JavaScript</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="public/images/keys.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Rfr gjvtyznm hfcrkflre rkfbdfnehs&</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="public/images/ruby.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Не важно какой язык учить, если это Ruby</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="public/images/durka.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Как доказать врачам, что масоны...</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="public/images/cats.jpg" class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title h5">Почему коты жидкие, но хлеб?</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Вход и регистрация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="login" name="login">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp">
+            <div id="passwordHelp" class="form-text">Должен содержать минимум одну цифру, заглавную букву, символ, иероглиф, коловрат, число зверя и кровь невинного</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+<script src="public/index.js"></script>
+</body>
+</html>
