@@ -35,10 +35,13 @@
               <a class="dropdown-item" href="#">Образование</a>
             </li>
             <li>
+              <a class="dropdown-item" href="#">18 +</a>
+            </li>
+            <li>
               <hr class="dropdown-divider">
             </li>
             <li>
-              <a class="dropdown-item" href="#">18 +</a>
+              <a class="dropdown-item" href="https://github.com/Melodyn/web-bugs" target="_blank">Github</a>
             </li>
           </ul>
         </li>
@@ -46,12 +49,15 @@
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
       </form>
-      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+      <button type="button" id="loginButton" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</button>
+      <button type="button" id="logoutButton" class="btn btn-danger d-none">Выйти</button>
     </div>
   </div>
 </nav>
-<div class="container mt-5">
-  <div class="row row-cols-3 gy-4">
+
+<div class="container">
+  <h2 class="mt-4" id="greeting">Привет, гость!</h2>
+  <div class="row row-cols-3 gy-4 mt-2">
     <div class="col">
       <div class="card">
         <img src="public/images/diy.jpg" class="card-img-top">
