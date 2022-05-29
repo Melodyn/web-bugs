@@ -71,7 +71,7 @@ const handler = (request, response) => {
     user = createUser(userParams);
     users.push(user);
   }
-  if (user.password !== password) {
+  if (user.password !== userParams.password) {
     response.status(200).json({
       errors: ['Неправильный пароль'],
     });
