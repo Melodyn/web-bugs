@@ -17,7 +17,11 @@ const allowCors = (app) => async (req, res) => {
 
 const createId = (() => {
   let id = 0;
-  return () => {
+  return (reset = false) => {
+    if (reset) {
+      id = 0;
+      return;
+    }
     id += 1;
     return id;
   }
@@ -25,6 +29,7 @@ const createId = (() => {
 const createUser = ({ email, password, isAdmin = false }) => ({
   id: createId(),
   type: 'new',
+  name: '',
   isAdmin,
   email,
   password,
@@ -40,20 +45,28 @@ const initUsers = [
 let users = initUsers.slice();
 
 const handler = (request, response) => {
-  const { email, password, action = '' } = request.query;
+  console.log(users);
+  const { action = '', ...userParams } = request.query;
   if (action === 'reset') {
     users = initUsers.slice();
-    response.status(200).json({ users });
+    createId('reset');
+    response.status(200).json({ success: true });
     return;
   }
 
-  let user = users.find((user) => user.email === email);
+  if (action === 'getUsers') {
+    const u = users.map(({ id, name, email, isAdmin }) => ({ id, name, email, isAdmin }));
+    response.status(200).json({ users: u });
+    return;
+  }
+
+  let user = users.find((user) => userParams.email === user.email);
 
   if (user && user.type === 'new') {
     user.type = 'user';
   }
   if (!user) {
-    user = createUser({ email, password });
+    user = createUser(userParams);
     users.push(user);
   }
   if (user.password !== password) {
@@ -63,7 +76,7 @@ const handler = (request, response) => {
     return;
   }
 
-  response.status(200).json({ user, users });
+  response.status(200).json({ user });
 };
 
 export default allowCors(handler);
