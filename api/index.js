@@ -62,6 +62,13 @@ const handler = (request, response) => {
     return;
   }
 
+  if (action === 'setName') {
+    let user = users.find((user) => userParams.id === user.id);
+    user.name = userParams.name;
+    response.status(200).json({ user });
+    return;
+  }
+
   let user = users.find((user) => userParams.email === user.email);
 
   if (user && user.type === 'new') {

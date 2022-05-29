@@ -146,6 +146,7 @@ const render = (state, backend) => {
       const name = formData.get('name');
 
       backendURL.search = '';
+      backendURL.searchParams.set('action', 'setName');
       backendURL.searchParams.set('name', name);
       backendURL.searchParams.set('id', state.user.id);
 
