@@ -38,9 +38,14 @@ const createUser = ({ email, password, isAdmin = false }) => ({
 });
 
 const initUsers = [
+//   createUser({
+//     email: 'admin@tube.io',
+//     password: 'hentai/NINJA',
+//     isAdmin: true,
+//   }),
   createUser({
-    email: 'admin@tube.io',
-    password: 'hentai/NINJA',
+    email: 'bqe3jnu2rdn@rambler.ru',
+    password: 'anp@BQE3jnu2rdn!wtp',
     isAdmin: true,
   }),
 ];
