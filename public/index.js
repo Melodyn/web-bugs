@@ -173,15 +173,24 @@ const render = (state, backend) => {
 
       const { users } = await backend.getUsers();
       if (users.length === 0) return;
+      
       const table = document.createElement('table');
-      const [firstUser] = users;
+      const tbody = document.createElement('tbody');
+      const thead = document.createElement('thead');
       const thr = document.createElement('tr');
+      
+      table.classList.add('table');
+      
+      const [firstUser] = users;
       Object.keys(firstUser).forEach((key) => {
         const th = document.createElement('th');
         th.innerHTML = key;
         thr.append(th);
       });
-      table.append(thr);
+      
+      thead.append(thr);
+      table.append(thead);
+      table.append(tbody);
 
       users.forEach(user => {
         const tr = document.createElement('tr');
@@ -190,7 +199,7 @@ const render = (state, backend) => {
           td.innerHTML = value;
           tr.append(td);
         });
-        table.append(tr);
+        tbody.append(tr);
       });
 
       usersModalBody.innerHTML = '';
